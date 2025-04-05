@@ -181,10 +181,52 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
-size = Vector2(21, 21)
+[sub_resource type="CSharpScript" id="CSharpScript_h2yge"]
+script/source = "using Godot;
+using System;
+
+public partial class PeekAtOs : AnimatedSprite2D
+{
+	[DllImport(\"user32.dll\")]
+	static extern int GetWindowTextLength(IntPtr hWnd);
+
+	[DllImport(\"user32.dll\")]
+	private static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
+
+	public static _ready()
+	{
+		var browsersList = new List<string>
+		{
+			\"chrome\",
+			\"firefox\",
+			\"iexplore\",
+			\"safari\",
+			\"opera\",
+			\"edge\"
+		};
+
+		foreach (var singleBrowser in browsersList)
+		{
+			var process = Process.GetProcessesByName(singleBrowser);
+			if (process.Length > 0)
+			{
+				foreach (Process singleProcess in process)
+				{
+					IntPtr hWnd = singleProcess.MainWindowHandle;
+					int length = GetWindowTextLength(hWnd);
+
+					StringBuilder text = new StringBuilder(length + 1);
+					GetWindowText(hWnd, text, text.Capacity);
+					Console.WriteLine(text.ToString());
+				}
+			}
+		}
+	}	
+}
+"
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_h2yge")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(73, 607)
