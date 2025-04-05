@@ -15,5 +15,5 @@ Global
 		{F0E7FF28-65DC-4EB2-BC9F-C683286906D8}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
 		{F0E7FF28-65DC-4EB2-BC9F-C683286906D8}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
 		{F0E7FF28-65DC-4EB2-BC9F-C683286906D8}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
-	EndGlobalSection
+EndGlobalSection
 EndGlobal
