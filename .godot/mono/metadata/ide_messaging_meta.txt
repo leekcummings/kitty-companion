@@ -1,2 +1,0 @@
-﻿61339
-C:/Users/chris/Documents/godot/Godot_v4.4.1-stable_mono_windows_arm64/Godot_v4.4.1-stable_mono_windows_arm64.exe
