@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd0me4waoes67"
-path="res://.godot/imported/sitting.png-86ffff1e283096d0ea676204a4bdaba0.ctex"
+uid="uid://s0yf1udbuul7"
+path="res://.godot/imported/standing_tongue.png-16490badc4668fd30b04880f5b99cc2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PNG/sitting.png"
-dest_files=["res://.godot/imported/sitting.png-86ffff1e283096d0ea676204a4bdaba0.ctex"]
+source_file="res://Sprites/standing_tongue.png"
+dest_files=["res://.godot/imported/standing_tongue.png-16490badc4668fd30b04880f5b99cc2c.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

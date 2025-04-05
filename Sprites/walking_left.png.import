@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sfmu1b6l7oj7"
-path="res://.godot/imported/standing_tongue.png-db192b96311be99b56216c30fc3c14cc.ctex"
+uid="uid://byamuhqjehol2"
+path="res://.godot/imported/walking_left.png-e461739eb745e0cc8288e7481ad54219.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PNG/standing_tongue.png"
-dest_files=["res://.godot/imported/standing_tongue.png-db192b96311be99b56216c30fc3c14cc.ctex"]
+source_file="res://Sprites/walking_left.png"
+dest_files=["res://.godot/imported/walking_left.png-e461739eb745e0cc8288e7481ad54219.ctex"]
 
 [params]
 
