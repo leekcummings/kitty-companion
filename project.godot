@@ -12,7 +12,7 @@ config_version=5
 
 config/name="little-man"
 run/main_scene="uid://u5dmuymgn3xs"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]

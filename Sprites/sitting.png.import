@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci87ulu7ic0lk"
-path="res://.godot/imported/walking_back.png-ce1e149ceb69bbb6d112f218ada0ce4d.ctex"
+uid="uid://cu304fla8sb5t"
+path="res://.godot/imported/sitting.png-74153158008fcc9e2fc6eeee3d113985.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PNG/walking_back.png"
-dest_files=["res://.godot/imported/walking_back.png-ce1e149ceb69bbb6d112f218ada0ce4d.ctex"]
+source_file="res://Sprites/sitting.png"
+dest_files=["res://.godot/imported/sitting.png-74153158008fcc9e2fc6eeee3d113985.ctex"]
 
 [params]
 
