@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://u5dmuymgn3xs"]
+[gd_scene load_steps=13 format=3 uid="uid://u5dmuymgn3xs"]
 
 [ext_resource type="Texture2D" uid="uid://2d1syd4axqol" path="res://Sprites/PNG/standing.png" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://ci7o4na86jjgg" path="res://clickthrough.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://sfmu1b6l7oj7" path="res://Sprites/PNG/standing_tongue.png" id="2_h2yge"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dm0k"]
@@ -74,9 +75,10 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_h2yge")
 
 [node name="sitting" type="AnimatedSprite2D" parent="."]
-position = Vector2(611, 347)
+position = Vector2(773, 399)
 scale = Vector2(17.1, 17.1)
 sprite_frames = SubResource("SpriteFrames_1bvp3")
 animation = &"standing_tongue"
