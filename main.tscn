@@ -1,4 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://u5dmuymgn3xs"]
+[gd_scene load_steps=12 format=3 uid="uid://u5dmuymgn3xs"]
+
+[ext_resource type="Texture2D" uid="uid://2d1syd4axqol" path="res://Sprites/PNG/standing.png" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://sfmu1b6l7oj7" path="res://Sprites/PNG/standing_tongue.png" id="2_h2yge"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dm0k"]
 atlas = null
@@ -16,6 +19,22 @@ region = Rect2(40, 0, 20, 20)
 atlas = null
 region = Rect2(60, 0, 20, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
+atlas = ExtResource("1_0xm2m")
+region = Rect2(0, 0, 25, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
+atlas = ExtResource("1_0xm2m")
+region = Rect2(25, 0, 25, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mycd"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(0, 0, 25, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_272bh"]
+atlas = ExtResource("2_h2yge")
+region = Rect2(25, 0, 25, 21)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1bvp3"]
 animations = [{
 "frames": [{
@@ -32,7 +51,29 @@ animations = [{
 "texture": SubResource("AtlasTexture_h2yge")
 }],
 "loop": true,
-"name": &"default",
+"name": &"sitting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bvp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lquwl")
+}],
+"loop": true,
+"name": &"standing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mycd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_272bh")
+}],
+"loop": true,
+"name": &"standing_tongue",
 "speed": 5.0
 }]
 
@@ -42,3 +83,4 @@ animations = [{
 position = Vector2(611, 347)
 scale = Vector2(17.1, 17.1)
 sprite_frames = SubResource("SpriteFrames_1bvp3")
+animation = &"standing_tongue"
