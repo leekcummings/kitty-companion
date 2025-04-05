@@ -4,19 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://sfmu1b6l7oj7" path="res://Sprites/PNG/standing_tongue.png" id="2_h2yge"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dm0k"]
-atlas = null
 region = Rect2(0, 0, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ig7tw"]
-atlas = null
 region = Rect2(20, 0, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xm2m"]
-atlas = null
 region = Rect2(40, 0, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h2yge"]
-atlas = null
 region = Rect2(60, 0, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bvp3"]
