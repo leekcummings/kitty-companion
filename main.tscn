@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://u5dmuymgn3xs"]
+[gd_scene load_steps=14 format=3 uid="uid://u5dmuymgn3xs"]
 
 [ext_resource type="Texture2D" uid="uid://2d1syd4axqol" path="res://Sprites/PNG/standing.png" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://ci7o4na86jjgg" path="res://clickthrough.gd" id="1_h2yge"]
@@ -74,11 +74,56 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CSharpScript" id="CSharpScript_h2yge"]
+script/source = "using Godot;
+using System;
+
+public partial class PeekAtOs : AnimatedSprite2D
+{
+	[DllImport(\"user32.dll\")]
+	static extern int GetWindowTextLength(IntPtr hWnd);
+
+	[DllImport(\"user32.dll\")]
+	private static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
+
+	public static _ready()
+	{
+		var browsersList = new List<string>
+		{
+			\"chrome\",
+			\"firefox\",
+			\"iexplore\",
+			\"safari\",
+			\"opera\",
+			\"edge\"
+		};
+
+		foreach (var singleBrowser in browsersList)
+		{
+			var process = Process.GetProcessesByName(singleBrowser);
+			if (process.Length > 0)
+			{
+				foreach (Process singleProcess in process)
+				{
+					IntPtr hWnd = singleProcess.MainWindowHandle;
+					int length = GetWindowTextLength(hWnd);
+
+					StringBuilder text = new StringBuilder(length + 1);
+					GetWindowText(hWnd, text, text.Capacity);
+					Console.WriteLine(text.ToString());
+				}
+			}
+		}
+	}	
+}
+"
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h2yge")
 
 [node name="sitting" type="AnimatedSprite2D" parent="."]
-position = Vector2(773, 399)
+position = Vector2(780, 366)
 scale = Vector2(17.1, 17.1)
 sprite_frames = SubResource("SpriteFrames_1bvp3")
 animation = &"standing_tongue"
+script = SubResource("CSharpScript_h2yge")
