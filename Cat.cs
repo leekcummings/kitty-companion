@@ -162,4 +162,13 @@ public partial class Cat : Area2D
 			moves = 0;
 		}
 	}
+	public override void _InputEvent(Viewport viewport, InputEvent ev, int shape_idx) {
+	
+		var btn = ev as InputEventMouseButton;
+	
+
+		if(btn != null && btn.ButtonIndex == MouseButton.Left && btn.Pressed) {
+			GD.Print("Clicked");
+		}
+	}
 }
