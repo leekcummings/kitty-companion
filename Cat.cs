@@ -124,7 +124,7 @@ public partial class Cat : Area2D
 			right();
 			}
 			
-		if(x >= (int)winWidth-50){
+		if(x >= (int)winWidth-120){
 				// go left
 				x -= 50;
 				left();
