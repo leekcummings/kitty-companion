@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dogako4j5nahl"]
+
+[ext_resource type="Script" uid="uid://blo568so5tf35" path="res://margin_container.gd" id="1_1d40f"]
+[ext_resource type="Texture2D" uid="uid://bglsmqimd0yhg" path="res://Sprites/text_box3.png" id="2_oskos"]
+[ext_resource type="FontFile" uid="uid://b3krix0nn8dcu" path="res://dogica/TTF/dogicapixel.ttf" id="3_gdqd4"]
+
+[node name="Text" type="MarginContainer"]
+offset_left = 201.0
+offset_top = 134.0
+offset_right = 270.0
+offset_bottom = 229.0
+script = ExtResource("1_1d40f")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_oskos")
+region_rect = Rect2(0, 0, 51, 60)
+patch_margin_left = 32
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gdqd4")
+text = "  "
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

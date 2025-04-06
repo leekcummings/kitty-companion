@@ -1,8 +1,8 @@
 extends MarginContainer
 
 # getting elements workable in scripe
-@onready var label = $MraginContainer/Label
-@onready var timer = $LetterDisplayTimer 
+@onready var label = $MarginContainer/Label
+@onready var timer = $LetterDisplayTimer
 
 const max_width = 256
 
