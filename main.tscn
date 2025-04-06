@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://u5dmuymgn3xs"]
+[gd_scene load_steps=36 format=3 uid="uid://u5dmuymgn3xs"]
 
 [ext_resource type="Script" uid="uid://ci7o4na86jjgg" path="res://clickthrough.gd" id="1_5vw27"]
 [ext_resource type="Texture2D" uid="uid://byamuhqjehol2" path="res://Sprites/walking_left.png" id="1_7mycd"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://s0yf1udbuul7" path="res://Sprites/standing_tongue.png" id="5_4c57u"]
 [ext_resource type="Script" uid="uid://bnh8cwj1uhuvb" path="res://Cat.cs" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://6u5beimesp2h" path="res://Sprites/standing.png" id="6_efxa6"]
+[ext_resource type="Script" uid="uid://ctcu5skvvwqpi" path="res://text_manager.gd" id="9_dg77c"]
+[ext_resource type="Script" uid="uid://blo568so5tf35" path="res://margin_container.gd" id="9_efxa6"]
+[ext_resource type="Texture2D" uid="uid://bglsmqimd0yhg" path="res://Sprites/text_box3.png" id="9_kek77"]
+[ext_resource type="FontFile" uid="uid://b3krix0nn8dcu" path="res://dogica/TTF/dogicapixel.ttf" id="10_4c57u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
 atlas = ExtResource("1_7mycd")
@@ -228,3 +232,40 @@ root_node = NodePath("")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2.24998, 10.25)
 scale = Vector2(4.02381, 4.02381)
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("9_dg77c")
+
+[node name="MarginContainer" type="MarginContainer" parent="Node"]
+offset_top = -67.0
+offset_right = 85.0
+offset_bottom = 1.0
+script = ExtResource("9_efxa6")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Node/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("9_kek77")
+region_rect = Rect2(0, 0, 51, 60)
+patch_margin_left = 32
+patch_margin_top = 10
+patch_margin_right = 11
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="Node/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="Node/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_4c57u")
+text = "  "
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="Node/MarginContainer"]
+one_shot = true
+
+[connection signal="timeout" from="Node/MarginContainer/LetterDisplayTimer" to="Node/MarginContainer" method="_on_letter_display_timer_timeout"]

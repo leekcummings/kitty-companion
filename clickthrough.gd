@@ -15,3 +15,7 @@ func set_passthrough(sprite: AnimatedSprite2D):
 	]
 	
 	DisplayServer.window_set_mouse_passthrough(texture_corners)
+
+
+func _on_letter_display_timer_timeout() -> void:
+	pass # Replace with function body.

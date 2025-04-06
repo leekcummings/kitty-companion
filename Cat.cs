@@ -3,6 +3,8 @@ using System;
 
 public partial class Cat : Area2D
 {	
+	private Node TextManager;
+	
 	// random
 	Random rng = new Random();
 	
@@ -41,6 +43,7 @@ public partial class Cat : Area2D
 
 	// runs on start
 	private void _ready(){
+		TextManager = GetNode("Node");
 		cat = GetNode<AnimatedSprite2D>("Cat");
 		cat.Play("standing");
 
@@ -94,7 +97,8 @@ public partial class Cat : Area2D
 	private void _action(){
 
 		performingAction = true;
-		i = rng.Next(6);
+		//i = rng.Next(6);
+		i=3;
 		if(tick/60 >= 30){
 			direction = Direction.still;
 			cat.Play("sleeping");
@@ -124,6 +128,7 @@ public partial class Cat : Area2D
 			case 3:
 			cat.Play("stand_tongue");
 			direction = Direction.still;
+			TextManager.Call( "play_dialogue" ,new Vector2(x, 50), "You have to drink water dumb ass");
 			break;
 
 			// possibly make this when you're away from the keyboard
