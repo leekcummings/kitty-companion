@@ -95,6 +95,9 @@ public partial class Cat : Area2D
 
 		performingAction = true;
 		i = rng.Next(6);
+		
+		//if(//dialogue is playing)
+		
 		if(tick/60 >= 30){
 			direction = Direction.still;
 			cat.Play("sleeping");
@@ -122,7 +125,7 @@ public partial class Cat : Area2D
 			break;
 
 			case 3:
-			cat.Play("stand_tongue");
+			cat.Play("standing");
 			direction = Direction.still;
 			break;
 
