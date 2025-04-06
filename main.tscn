@@ -203,7 +203,7 @@ public partial class catHeight : AnimatedSprite2D
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
 size = Vector2(21, 21)
 
-[node name="Cat" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_5vw27")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -227,9 +227,3 @@ script = ExtResource("8_5vw27")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
 root_node = NodePath("")
-
-[node name="Text" type="Node2D" parent="."]
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
