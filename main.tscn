@@ -198,7 +198,7 @@ public partial class catHeight : AnimatedSprite2D
 		winHeight = (int)GetViewport().GetVisibleRect().Size.Y;
 	}
 }
-"
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
 size = Vector2(21, 21)
