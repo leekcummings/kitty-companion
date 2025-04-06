@@ -49,8 +49,8 @@ public partial class Cat : Area2D
 
 		winHeight = (int)GetViewport().GetVisibleRect().Size.Y;
 		int catHeight = 21;
-		float catOffset = winHeight - (cat.Scale.Y * catHeight);
-		cat.Position = new Vector2(x, catOffset);
+		float catOffset = winHeight - 2*(cat.Scale.Y * catHeight);
+		cat.Position = new Vector2(x, (int) catOffset);
 	}
 
 	// runs on update
@@ -126,7 +126,7 @@ public partial class Cat : Area2D
 			break;
 
 			case 3:
-			cat.Play("stand_tongue");
+			cat.Play("standing");
 			direction = Direction.still;
 			TextManager.Call( "play_dialogue" ,new Vector2(x, 50), "You have to drink water dumb ass");
 			break;
@@ -190,8 +190,8 @@ public partial class Cat : Area2D
 		x += dx;
 		winHeight = (int)GetViewport().GetVisibleRect().Size.Y;
 		int catHeight = 21;
-		float catOffset = winHeight - (cat.Scale.Y * catHeight);
-		cat.Position = new Vector2(x, catOffset);
+		float catOffset = winHeight - 2*(cat.Scale.Y * catHeight);
+		cat.Position = new Vector2(x, (int) catOffset);
 		
 		if(direction == Direction.still){
 			aval_moves = 300;
@@ -206,6 +206,15 @@ public partial class Cat : Area2D
 		else{
 			performingAction = false;
 			moves = 0;
+		}
+	}
+	public override void _InputEvent(Viewport viewport, InputEvent ev, int shape_idx) {
+	
+		var btn = ev as InputEventMouseButton;
+	
+
+		if(btn != null && btn.ButtonIndex == MouseButton.Left && btn.Pressed) {
+			GD.Print("Clicked");
 		}
 	}
 }
