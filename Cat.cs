@@ -57,8 +57,8 @@ public partial class Cat : Area2D
 
 		winHeight = (int)GetViewport().GetVisibleRect().Size.Y;
 		int catHeight = 21;
-		float catOffset = winHeight - (cat.Scale.Y * catHeight);
-		cat.Position = new Vector2(x, catOffset);
+		float catOffset = winHeight - 2*(cat.Scale.Y * catHeight);
+		cat.Position = new Vector2(x, (int) catOffset);
 	}
 
 	// runs on update

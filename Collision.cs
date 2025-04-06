@@ -12,8 +12,6 @@ using System;
 	////cat.Frame().GetSize() * cat.Scale.X;
 //}
 
-
-
 public partial class Collision : CollisionShape2D
 {
 	private int x;
