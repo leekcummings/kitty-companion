@@ -24,6 +24,12 @@ public partial class Cat : Area2D
 	private float winWidth;
 	private float winHeight;
 
+	//mouse stuff
+	private float mouseX = 0.0f;
+	private float mouseY = 0.0f;
+	private int tick = 0;
+	private bool sleeping;
+
 	// getting the cat object (this object)
 	private AnimatedSprite2D cat;
 
@@ -45,6 +51,24 @@ public partial class Cat : Area2D
 
 	// runs on update
 	public void _process(float delta){
+
+		//checking if the mouse has been used
+		if (GetViewport().GetMousePosition().X == mouseX &&
+		 GetViewport().GetMousePosition().Y == mouseY){
+			tick ++;
+		}
+		else{
+			tick = 0;
+			if (sleeping){
+				performingAction = false;
+				sleeping = false;
+				moves = 0;
+			}
+		}
+
+		mouseX = GetViewport().GetMousePosition().X;
+		mouseY = GetViewport().GetMousePosition().Y;
+
 		winWidth = (int)GetViewport().GetVisibleRect().Size.X;
 		winHeight = (int)GetViewport().GetVisibleRect().Size.Y;
 
@@ -70,8 +94,19 @@ public partial class Cat : Area2D
 
 		performingAction = true;
 		i = rng.Next(6);
-		
-		switch(i){
+		if(tick/60 >= 30){
+			direction = Direction.still;
+			cat.Play("sleeping");
+			sleeping = true;
+		}
+		else if(tick/60 >= 25){
+			
+			direction = Direction.still;
+			cat.Play("sitting");
+		}
+		else{
+
+			switch(i){
 			case 0:
 			cat.Play("sitting");
 			direction = Direction.still;
@@ -104,6 +139,8 @@ public partial class Cat : Area2D
 			left();
 			break;
 		}
+		}
+		
 	}
 	
 	private void right(){
