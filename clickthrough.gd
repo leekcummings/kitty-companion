@@ -3,7 +3,7 @@ extends Node2D
 # https://github.com/alinehui/partially-clickthrough-transparent/blob/main/main.gd
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	set_passthrough($sitting) # change this if sprite name changes
+	set_passthrough($Area2D/Cat) # change this if sprite name changes
 
 func set_passthrough(sprite: AnimatedSprite2D):
 	var texture_center: Vector2 = Vector2(sprite.sprite_frames.get_frame_texture(sprite.animation, sprite.frame).get_size()) * 0.5*sprite.scale.x
