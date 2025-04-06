@@ -22,7 +22,7 @@ window/size/initial_screen=5
 window/size/always_on_top=true
 window/size/transparent=true
 window/stretch/mode="viewport"
-window/stretch/aspect="ignore"
+window/stretch/aspect="expand"
 window/per_pixel_transparency/allowed=true
 
 [dotnet]

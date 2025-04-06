@@ -8,11 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://s0yf1udbuul7" path="res://Sprites/standing_tongue.png" id="5_4c57u"]
 [ext_resource type="Script" uid="uid://bnh8cwj1uhuvb" path="res://Cat.cs" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://6u5beimesp2h" path="res://Sprites/standing.png" id="6_efxa6"]
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://dyw1tbqy324wb" path="res://Collision.cs" id="8_5vw27"]
-=======
-[ext_resource type="Script" uid="uid://b6b3tsjbdiiuj" path="res://Collision.cs" id="8_5vw27"]
->>>>>>> bc68eaa4f5859e21a5cf06ababce005b9bd42207
+[ext_resource type="Script" path="res://Collision.cs" id="8_5vw27"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
 atlas = ExtResource("1_7mycd")
@@ -215,15 +211,16 @@ position = Vector2(31, 33)
 script = ExtResource("6_7mycd")
 
 [node name="Cat" type="AnimatedSprite2D" parent="Area2D"]
-position = Vector2(0.5, -1.5)
+position = Vector2(-61, -63)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_htxhm")
-animation = &"standing"
-frame_progress = 0.281057
+animation = &"sitting"
+centered = false
+offset = Vector2(10, 10)
 script = SubResource("CSharpScript_5vw27")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, -1.5)
+position = Vector2(1, -1)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_272bh")
 script = ExtResource("8_5vw27")
