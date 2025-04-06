@@ -3,6 +3,9 @@ using System;
 
 public partial class Cat : Area2D
 {	
+	private Node TextManager;
+	private AudioStreamPlayer audio;
+	
 	// random
 	Random rng = new Random();
 	
@@ -29,6 +32,11 @@ public partial class Cat : Area2D
 	private float mouseY = 0.0f;
 	private int tick = 0;
 	private bool sleeping;
+	
+	private int water = 53900;
+	private int food = 0;
+	private int time = 0;
+	private bool love;
 
 	// getting the cat object (this object)
 	private AnimatedSprite2D cat;
@@ -41,6 +49,9 @@ public partial class Cat : Area2D
 
 	// runs on start
 	private void _ready(){
+		
+		audio = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+		TextManager = GetNode("Node");
 		cat = GetNode<AnimatedSprite2D>("Cat");
 		cat.Play("standing");
 
@@ -52,7 +63,9 @@ public partial class Cat : Area2D
 
 	// runs on update
 	public void _process(float delta){
-
+		water ++;
+		food ++;
+		time ++;
 		//checking if the mouse has been used
 		if (GetViewport().GetMousePosition().X == mouseX &&
 		 GetViewport().GetMousePosition().Y == mouseY){
@@ -64,9 +77,16 @@ public partial class Cat : Area2D
 				performingAction = false;
 				sleeping = false;
 				moves = 0;
+				moves = 0;
 			}
 		}
-
+		
+		if(love){
+			direction = Direction.still;
+			cat.Play("love");
+			love = false;
+		}
+		
 		mouseX = GetViewport().GetMousePosition().X;
 		mouseY = GetViewport().GetMousePosition().Y;
 
@@ -94,11 +114,28 @@ public partial class Cat : Area2D
 	private void _action(){
 
 		performingAction = true;
-		i = rng.Next(6);
+		i = rng.Next(10);
+		//i=3;
 		
-		//if(//dialogue is playing)
-		
-		if(tick/60 >= 30){
+		if(water/60 >= 900){
+			//15 minutes
+			direction = Direction.still;
+			cat.Play("water");
+			water = 0;
+		}
+		else if(food/60 >= 10800){
+			//3 hours
+			direction = Direction.still;
+			cat.Play("food");
+			food = 0;
+		}
+		else if(time/60 >= 1800){
+			//30 mins
+			direction = Direction.still;
+			cat.Play("time");
+			time = 0;
+		}
+		else if(tick/60 >= 30){
 			direction = Direction.still;
 			cat.Play("sleeping");
 			sleeping = true;
@@ -141,6 +178,22 @@ public partial class Cat : Area2D
 			
 			case 5:
 			left();
+			break;
+			
+			case 6:
+			left();
+			break;
+			
+			case 7:
+			right();
+			break;
+			
+			case 8:
+			left();
+			break;
+			
+			case 9:
+			right();
 			break;
 		}
 		}
@@ -188,8 +241,8 @@ public partial class Cat : Area2D
 		x += dx;
 		winHeight = (int)GetViewport().GetVisibleRect().Size.Y;
 		int catHeight = 21;
-		float catOffset = winHeight - 2*(cat.Scale.Y * catHeight);
-		cat.Position = new Vector2(x, (int) catOffset);
+		float catOffset = winHeight - (cat.Scale.Y * catHeight);
+		cat.Position = new Vector2(x, catOffset-70);
 		
 		if(direction == Direction.still){
 			aval_moves = 300;
@@ -209,10 +262,9 @@ public partial class Cat : Area2D
 	public override void _InputEvent(Viewport viewport, InputEvent ev, int shape_idx) {
 	
 		var btn = ev as InputEventMouseButton;
-	
-
 		if(btn != null && btn.ButtonIndex == MouseButton.Left && btn.Pressed) {
-			GD.Print("Clicked");
+			love = true;
+			audio.Play();
 		}
 	}
 }

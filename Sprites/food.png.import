@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://birjnr85lgkqy"
-path="res://.godot/imported/text_box.png-a9b0a4c3fc7444f37b6c747f9d819f50.ctex"
+uid="uid://dpvow8tmcu5x8"
+path="res://.godot/imported/food.png-03a70cefa43c7bbb32683813fb526109.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/text_box.png"
-dest_files=["res://.godot/imported/text_box.png-a9b0a4c3fc7444f37b6c747f9d819f50.ctex"]
+source_file="res://Sprites/food.png"
+dest_files=["res://.godot/imported/food.png-03a70cefa43c7bbb32683813fb526109.ctex"]
 
 [params]
 

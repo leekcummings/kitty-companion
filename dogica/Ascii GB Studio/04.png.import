@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://birjnr85lgkqy"
-path="res://.godot/imported/text_box.png-a9b0a4c3fc7444f37b6c747f9d819f50.ctex"
+uid="uid://clmfpcr7h6m6u"
+path="res://.godot/imported/04.png-834bc4983fc24e108b9701d5bd2f99fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/text_box.png"
-dest_files=["res://.godot/imported/text_box.png-a9b0a4c3fc7444f37b6c747f9d819f50.ctex"]
+source_file="res://dogica/Ascii GB Studio/04.png"
+dest_files=["res://.godot/imported/04.png-834bc4983fc24e108b9701d5bd2f99fc.ctex"]
 
 [params]
 

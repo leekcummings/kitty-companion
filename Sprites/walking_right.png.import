@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://birjnr85lgkqy"
-path="res://.godot/imported/text_box.png-a9b0a4c3fc7444f37b6c747f9d819f50.ctex"
+uid="uid://d2b2wxrdgqgwn"
+path="res://.godot/imported/walking_right.png-36a134d481ba1b0020d7f85cae1819ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/text_box.png"
-dest_files=["res://.godot/imported/text_box.png-a9b0a4c3fc7444f37b6c747f9d819f50.ctex"]
+source_file="res://Sprites/walking_right.png"
+dest_files=["res://.godot/imported/walking_right.png-36a134d481ba1b0020d7f85cae1819ed.ctex"]
 
 [params]
 
