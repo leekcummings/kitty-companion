@@ -41,12 +41,13 @@ public partial class Cat : Area2D
 
 	// runs on start
 	private void _ready(){
-		
 		cat = GetNode<AnimatedSprite2D>("Cat");
 		cat.Play("standing");
 
 		winHeight = (int)GetViewport().GetVisibleRect().Size.Y;
-		cat.Position = new Vector2(x, 0);
+		int catHeight = 21;
+		float catOffset = winHeight - (cat.Scale.Y * catHeight);
+		cat.Position = new Vector2(x, catOffset);
 	}
 
 	// runs on update
@@ -182,7 +183,10 @@ public partial class Cat : Area2D
 		}
 
 		x += dx;
-		cat.Position = new Vector2 (x, 0);
+		winHeight = (int)GetViewport().GetVisibleRect().Size.Y;
+		int catHeight = 21;
+		float catOffset = winHeight - (cat.Scale.Y * catHeight);
+		cat.Position = new Vector2(x, catOffset);
 		
 		if(direction == Direction.still){
 			aval_moves = 300;
