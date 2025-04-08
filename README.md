@@ -10,4 +10,4 @@ Great job team!
 
 ## Further Improvements
 
-This is my no means a finished product, but we're proud of what we created in 24 hours. Further development of this project may include adding new features like habit customization or intelligent screen time tracking.
+This is by no means a finished product, but we're proud of what we created in 24 hours. Further development of this project may include adding new features like habit customization or intelligent screen time tracking.
